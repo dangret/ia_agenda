@@ -32,7 +32,7 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 	    
 	    php artisan migrate
 	
-	siendo posible generarla, la anexó de igual forma
+	siendo posible generarla, la anexó de igual forma 'create_db.sql'
 
 	NOTA: a pesar de tener habilitado los CORS, me da unos problemas con la modificación de la imagen, utilice un plugin para chrome ya que es debido a una configuración de seguridad del navegador.
 
