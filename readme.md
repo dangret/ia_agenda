@@ -15,6 +15,7 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 	También hay que cambiar la url en app/config/app.php por la que se le de como host virtual (por default es "http://agenda/")
 	
 	Para crear la base de datos, debebera de configurar el archivo app/config/local/database.php 
+	    
 	    'mysql' => array(
 	        'driver'    => 'mysql',
 	        'host'      => 'localhost',
@@ -25,9 +26,12 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 	        'collation' => 'utf8_unicode_ci',
 	        'prefix'    => '',
 	    ),
+	    
 	segun las configuraciones necesarias en su entorno de trabajo
 	despues, deberá de ejecutar el siguiente comando (estando en la carpeta 'backend')
+	    
 	    php artisan migrate
+	
 	siendo posible generarla, la anexó de igual forma
 
 	NOTA: a pesar de tener habilitado los CORS, me da unos problemas con la modificación de la imagen, utilice un plugin para chrome ya que es debido a una configuración de seguridad del navegador.
@@ -39,4 +43,8 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 	en el archivo 'frontend/src/app/ng.app.js' hasta el final, se encuentran las configuracíones de la ruta de la api, cambiarlas a convenciencia
 	por default es 'http://agenda/api/v1'
 	
-	ejecutar el servidor con el comando 'gulp serve', lo cual creará un'servidor para un ambiente de desarrollo
+	ejecutar el servidor con el comando 
+
+	    gulp serve
+	    
+	lo cual creará un'servidor para un ambiente de desarrollo
