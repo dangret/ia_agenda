@@ -1,25 +1,22 @@
-## Laravel PHP Framework
+Instrucciones
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+El proyecto está divido en dos partes, backend y frontend.
+Los archivos que se compilan no fueron borrados para no tener que instalar herramientas para hacer la prueba.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+1. BACKEND
+	Se encuentra hecho con laravel
+	los archivos principales son los siguientes:
+	- app/routes.php: Indica como se consumen los recursos
+	- app/controllers/*: son los controladores del RESTful api
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+	Para poder utilizarlo, es necesario montarlo sobre un servidor de su preferencia
+	apuntando hacia la carpeta de public como root (en apache se debe establecer como un host virtual)
+	También hay que cambiar la url en app/config/app.php por la que se le de como host virtual (por default es "http://agenda/")
+	NOTA: a pesar de tener habilitado los CORS, me da unos problemas con la modificación de la imagen, utilice un plugin para chrome omitirlo
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
-
-## Official Documentation
-
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
-
-### Contributing To Laravel
-
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+2. FRONTEND
+	Está hecho a base de un entorno de trabajo llamado angular-gulp
+	para poderlo ejecutar tendran que tener instalado nodejs y gulp (de manera global "npm install -g gulp")
+	en el archivo 'frontend/src/app/ng.app.js' hasta el final, se encuentran las configuracíones de la ruta de la api, cambiarlas a convenciencia
+	por default es 'http://agenda/api/v1'
+	ejecutar el servidor con el comando 'gulp serve', lo cual creará un'servidor para un ambiente de desarrollo
