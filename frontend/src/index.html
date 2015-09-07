@@ -1,0 +1,163 @@
+<!doctype html>
+<html ng-app="agenda">
+
+    <head>
+        <meta charset="utf-8">
+        <title>frontend</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+        <!-- bower:css -->
+        <!-- run `gulp inject` to automatically populate bower styles dependencies -->
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css({.tmp/serve,src}) styles/app.css -->
+        <!-- inject:css -->
+        <!-- css files will be automatically insert here -->
+        <!-- endinject -->
+        <!-- endbuild -->
+        <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap/bootstrap.min.css" />
+        <!-- libraries -->
+        <link rel="stylesheet" type="text/css" href="/assets/css/libs/nanoscroller.css" />
+        <!-- global styles -->
+        <link rel="stylesheet" type="text/css" href="/assets/css/compiled/theme_styles.min.css" />
+        <link rel="stylesheet" type="text/css" href="/assets/css/libs/nifty-component.css" />
+        <link rel="stylesheet" href="/assets/css/libs/fullcalendar.css" type="text/css" />
+        <link rel="stylesheet" href="/assets/css/libs/fullcalendar.print.css" type="text/css" media="print" />
+        <link rel="stylesheet" href="/assets/css/compiled/calendar.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="/assets/css/compiled/calendar.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="/assets/css/libs/morris.css" type="text/css" />
+        <link rel="stylesheet" href="/assets/css/libs/daterangepicker.css" type="text/css" />
+        <link rel="stylesheet" href="/assets/css/libs/jquery-jvectormap-1.2.2.css" type="text/css" />
+        <link rel="stylesheet" href="/assets/css/libs/dataTables.fixedHeader.css" type="text/css" />
+        <link rel="stylesheet" href="/assets/css/libs/dataTables.tableTools.css" type="text/css" />
+        <link rel="stylesheet" href="/assets/css/libs/ns-default.css" type="text/css" />
+        <link rel="stylesheet" href="/assets/css/libs/ns-style-growl.css" type="text/css" />
+        <link rel="stylesheet" href="/assets/css/libs/ns-style-bar.css" type="text/css" />
+        <link rel="stylesheet" href="/assets/css/libs/ns-style-attached.css" type="text/css" />
+        <link rel="stylesheet" href="/assets/css/libs/ns-style-other.css" type="text/css" />
+        <link rel="stylesheet" href="/assets/css/libs/ns-style-theme.css" type="text/css" />
+        <!-- Favicon -->
+        <!-- <link type="image/x-icon" href="favicon.png" rel="shortcut icon" /> -->
+        <!-- google font libraries -->
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300|Titillium+Web:200,300,400' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body class="theme-blue">
+        <!--[if lt IE 10]>
+          <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div id="theme-wrapper">
+            <header class="navbar" id="header-navbar">
+                <div class="container">
+                    <a id="logo" class="navbar-brand">
+                    </a>
+                    <div class="clearfix">
+                        <button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="fa fa-bars"></span>
+                        </button>
+                        <div class="nav-no-collapse pull-right" id="header-nav">
+                            <ul class="nav navbar-nav pull-right">
+                                <li class="dropdown profile-dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <img ng-src="/assets/img/samples/scarlet-159.png" alt="" />
+                                        <span class="hidden-xs">Scarlett Johansson</span> <b class="caret"></b>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="user-profile.html"><i class="fa fa-user"></i>Profile</a></li>
+                                    </ul>
+                                </li>
+                                <li class="hidden-xxs">
+                                    <a class="btn" href="javascript:void(0);" ng-click='logout()'>
+                                        <i class="fa fa-power-off"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div id="page-wrapper" class="container">
+                <div class="row">
+                    <div id="nav-col">
+                        <section id="col-left" class="col-left-nano">
+                            <div id="col-left-inner" class="col-left-nano-content">
+                                <div class="collapse navbar-collapse navbar-ex1-collapse" id="sidebar-nav">
+                                    <ul class="nav nav-pills nav-stacked" nav-ctrl>
+                                        <li>
+                                            <a href="/dashboard">
+                                                <i class="fa fa-tachometer"></i>
+                                                <span>Dasboard</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/contactos">
+                                                <i class="fa fa-users"></i>
+                                                <span>Contactos</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a id="make-small-nav">
+                                                <i class="fa fa-bars"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div id="content-wrapper" ng-view></div>
+                    <script type="text/ng-template" id="modalConfirm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="bootbox-close-button close" ng-click="close()" aria-hidden="true">×</button>
+                                <h3 style="border-bottom: none !important;">Confirmacion</h3>
+                            </div>
+                            <!-- dialog body -->
+                            <div class="modal-body">
+                                <div ng-bind='msg'></div>
+                            </div>
+                            <!-- dialog buttons -->
+                            <div class="modal-footer">
+                                <input type="submit" ng-click="close()" class="btn btn-danger" value="Cancelar">
+                                <input type="submit" ng-click="accept()" class="btn btn-primary" value="Aceptar">
+                            </div>
+                        </div>
+                    </script>
+                </div>
+            </div>
+        </div>
+        <!-- build:js(src) scripts/vendor.js -->
+        <!-- bower:js -->
+        <!-- run `gulp inject` to automatically populate bower script dependencies -->
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+        <!-- inject:js -->
+        <!-- js files will be automatically insert here -->
+        <!-- endinject -->
+        <!-- inject:partials -->
+        <!-- angular templates will be automatically converted in js and inserted here -->
+        <!-- endinject -->
+        <!-- endbuild -->
+
+        <script src="/assets/js/jquery.nanoscroller.min.js"></script>
+        <script src="/assets/js/classie.js"></script>
+        <script src="/assets/js/modernizr.custom.js"></script>
+        <script src="/assets/js/snap.svg-min.js"></script>
+        <script src="/assets/js/notificationFx.js"></script>
+        <!-- this page specific scripts -->
+        <!-- theme scripts -->
+        <script src="/assets/js/scripts.js"></script>
+        <script src="/assets/js/pace.min.js"></script>
+        <script src="/assets/js/dataTables.fixedHeader.js"></script>
+        <script src="/assets/js/dataTables.tableTools.js"></script>
+        <script src="/assets/js/jquery.dataTables.bootstrap.js"></script>
+        <script src="/assets/js/raphael-min.js"></script>
+        <script src="/assets/js/morris.min.js"></script>
+        <script src="/assets/js/jquery.nestable.js"></script>
+    </body>
+
+</html>

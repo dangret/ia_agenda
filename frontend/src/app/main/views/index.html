@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta charset="utf-8" />
+        <title>Agenda</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+        <!-- inject:bower:css -->
+        <link rel="stylesheet" href="/vendor/datatables/media/css/jquery.dataTables.css">
+        <link rel="stylesheet" href="/vendor/components-font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" href="/vendor/dropzone/dist/min/dropzone.min.css">
+        <link rel="stylesheet" href="/vendor/angular-datatables/dist/plugins/bootstrap/datatables.bootstrap.css">
+        <link rel="stylesheet" href="/vendor/angular-datepicker/dist/index.css">
+        <link rel="stylesheet" href="/vendor/morris.js/morris.css">
+        <link rel="stylesheet" href="/vendor/angular-ui-select/dist/select.css">
+        <link rel="stylesheet" href="/vendor/angular-ui-tree/dist/angular-ui-tree.min.css">
+        <link rel="stylesheet" href="/vendor/angular-xeditable/dist/css/xeditable.css">
+        <!-- endinject -->
+        <link rel="stylesheet" type="text/css" href="/css/bootstrap/bootstrap.min.css" />
+        <!-- libraries -->
+        <link rel="stylesheet" type="text/css" href="/css/libs/nanoscroller.css" />
+        <!-- global styles -->
+        <link rel="stylesheet" type="text/css" href="/css/compiled/theme_styles.min.css" />
+        <link rel="stylesheet" type="text/css" href="/css/libs/nifty-component.css" />
+        <!-- this page specific styles -->
+        <link rel="stylesheet" href="/css/libs/fullcalendar.css" type="text/css" />
+        <link rel="stylesheet" href="/css/libs/fullcalendar.print.css" type="text/css" media="print" />
+        <link rel="stylesheet" href="/css/compiled/calendar.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="/css/compiled/calendar.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="/css/libs/morris.css" type="text/css" />
+        <link rel="stylesheet" href="/css/libs/daterangepicker.css" type="text/css" />
+        <link rel="stylesheet" href="/css/libs/jquery-jvectormap-1.2.2.css" type="text/css" />
+        <link rel="stylesheet" href="/css/libs/dataTables.fixedHeader.css" type="text/css" />
+        <link rel="stylesheet" href="/css/libs/dataTables.tableTools.css" type="text/css" />
+        <link rel="stylesheet" href="/css/libs/ns-default.css" type="text/css" />
+        <link rel="stylesheet" href="/css/libs/ns-style-growl.css" type="text/css" />
+        <link rel="stylesheet" href="/css/libs/ns-style-bar.css" type="text/css" />
+        <link rel="stylesheet" href="/css/libs/ns-style-attached.css" type="text/css" />
+        <link rel="stylesheet" href="/css/libs/ns-style-other.css" type="text/css" />
+        <link rel="stylesheet" href="/css/libs/ns-style-theme.css" type="text/css" />
+        <!-- Favicon -->
+        <!-- <link type="image/x-icon" href="favicon.png" rel="shortcut icon" /> -->
+        <!-- google font libraries -->
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300|Titillium+Web:200,300,400' rel='stylesheet' type='text/css'>
+        <!-- Hoja de estilos personalizable-->
+    </head>
+
+    <body class="theme-blue" ng-app='remuneracion'>
+        <div class="md-overlay"></div>
+        
+        @include('template.modalConfirm')
+        <!-- /.main-container -->
+        <!-- inject:bower:js -->
+        <script src="/vendor/accounting/accounting.js"></script>
+        <script src="/vendor/jquery/dist/jquery.js"></script>
+        <script src="/vendor/datatables/media/js/jquery.dataTables.js"></script>
+        <script src="/vendor/br-validations/releases/br-validations.js"></script>
+        <script src="/vendor/string-mask/src/string-mask.js"></script>
+        <script src="/vendor/moment/moment.js"></script>
+        <script src="/vendor/raphael/raphael.js"></script>
+        <script src="/vendor/mocha/mocha.js"></script>
+        <script src="/vendor/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="/vendor/dropzone/dist/min/dropzone.min.js"></script>
+        <script src="/vendor/flow.js/dist/flow.js"></script>
+        <script src="/vendor/underscore/underscore.js"></script>
+        <script src="/vendor/angular/angular.js"></script>
+        <script src="/vendor/angular-animate/angular-animate.js"></script>
+        <script src="/vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="/vendor/angular-datatables/dist/angular-datatables.js"></script>
+        <script src="/vendor/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.js"></script>
+        <script src="/vendor/angular-datatables/dist/plugins/colreorder/angular-datatables.colreorder.js"></script>
+        <script src="/vendor/angular-datatables/dist/plugins/columnfilter/angular-datatables.columnfilter.js"></script>
+        <script src="/vendor/angular-datatables/dist/plugins/colvis/angular-datatables.colvis.js"></script>
+        <script src="/vendor/angular-datatables/dist/plugins/fixedcolumns/angular-datatables.fixedcolumns.js"></script>
+        <script src="/vendor/angular-datatables/dist/plugins/fixedheader/angular-datatables.fixedheader.js"></script>
+        <script src="/vendor/angular-datatables/dist/plugins/scroller/angular-datatables.scroller.js"></script>
+        <script src="/vendor/angular-datatables/dist/plugins/tabletools/angular-datatables.tabletools.js"></script>
+        <script src="/vendor/angular-datepicker/dist/index.js"></script>
+        <script src="/vendor/angular-dropzone/lib/angular-dropzone.js"></script>
+        <script src="/vendor/angular-input-masks/angular-input-masks-standalone.min.js"></script>
+        <script src="/vendor/angular-moment/angular-moment.js"></script>
+        <script src="/vendor/morris.js/morris.js"></script>
+        <script src="/vendor/angular-route/angular-route.js"></script>
+        <script src="/vendor/angular-sanitize/angular-sanitize.js"></script>
+        <script src="/vendor/angular-ui-fuelux-wizard/wizard.js"></script>
+        <script src="/vendor/angular-ui-select/dist/select.js"></script>
+        <script src="/vendor/angular-ui-tree/dist/angular-ui-tree.js"></script>
+        <script src="/vendor/angular-xeditable/dist/js/xeditable.js"></script>
+        <script src="/vendor/jquery.easy-pie-chart/dist/jquery.easypiechart.js"></script>
+        <script src="/vendor/jquery.easy-pie-chart/dist/angular.easypiechart.js"></script>
+        <script src="/vendor/ng-flow/dist/ng-flow.js"></script>
+        <script src="/vendor/ng-messages/angular-messages.js"></script>
+        <script src="/vendor/ng-remote-validate/release/ngRemoteValidate.js"></script>
+        <script src="/vendor/angular-morris-chart/src/angular-morris-chart.min.js"></script>
+        <!-- endinject -->
+        <script src="/js/jquery.nanoscroller.min.js"></script>
+        <script src="/js/classie.js"></script>
+        <script src="/js/modernizr.custom.js"></script>
+        <script src="/js/snap.svg-min.js"></script>
+        <script src="/js/notificationFx.js"></script>
+        <!-- this page specific scripts -->
+        <!-- theme scripts -->
+        <script src="/js/scripts.js"></script>
+        <script src="/js/pace.min.js"></script>
+        <script src="/js/dataTables.fixedHeader.js"></script>
+        <script src="/js/dataTables.tableTools.js"></script>
+        <script src="/js/jquery.dataTables.bootstrap.js"></script>
+        <script src="/js/raphael-min.js"></script>
+        <script src="/js/morris.min.js"></script>
+        <script src="/js/jquery.nestable.js"></script>
+        <!-- inject:ng:js -->
+        <script src="/ng/ng.app.js"></script>
+        <script src="/ng/controller/AreaService.js"></script>
+        <script src="/ng/controller/ContactCtrl.js"></script>
+        <script src="/ng/controller/DashboardCtrl.js"></script>
+        <script src="/ng/controller/EmployeeDataCtrl.js"></script>
+        <script src="/ng/controller/EstadoCuentaCtrl.js"></script>
+        <script src="/ng/controller/EvaluacionCtrl.js"></script>
+        <script src="/ng/controller/EvaluadorCtrl.js"></script>
+        <script src="/ng/controller/FiscalEntityService.js"></script>
+        <script src="/ng/controller/FiscalRegimeService.js"></script>
+        <script src="/ng/controller/LeadershipteamService.js"></script>
+        <script src="/ng/controller/PositionService.js"></script>
+        <script src="/ng/controller/ProfileCtrl.js"></script>
+        <script src="/ng/controller/ReporteCtrl.js"></script>
+        <script src="/ng/controller/ReportePrestadoraCtrl.js"></script>
+        <script src="/ng/controller/RolCtrl.js"></script>
+        <script src="/ng/controller/SectionService.js"></script>
+        <script src="/ng/controller/SubareaService.js"></script>
+        <script src="/ng/controller/TabService.js"></script>
+        <script src="/ng/controller/UserCtrl.js"></script>
+        <script src="/ng/controller/modalConfirmCtrl.js"></script>
+        <script src="/ng/directive/avRoleable.js"></script>
+        <script src="/ng/directive/avatar.js"></script>
+        <script src="/ng/directive/changeStatus.js"></script>
+        <script src="/ng/directive/deleteModel.js"></script>
+        <script src="/ng/directive/editEmployee.js"></script>
+        <script src="/ng/directive/groupValidation.js"></script>
+        <script src="/ng/directive/navCtrl.js"></script>
+        <script src="/ng/directive/passwordVerify.js"></script>
+        <script src="/ng/filter/UriFilter.js"></script>
+        <script src="/ng/service/ClientService.js"></script>
+        <script src="/ng/service/EmployeeService.js"></script>
+        <script src="/ng/service/ErrorResponseService.js"></script>
+        <script src="/ng/service/EstadoCuentaService.js"></script>
+        <script src="/ng/service/EvaluadorService.js"></script>
+        <script src="/ng/service/NotificationService.js"></script>
+        <script src="/ng/service/ReporteService.js"></script>
+        <script src="/ng/service/ResolveSesionService.js"></script>
+        <script src="/ng/service/RolService.js"></script>
+        <script src="/ng/service/SesionService.js"></script>
+        <script src="/ng/service/UserService.js"></script>
+        <!-- endinject -->
+    </body>
+
+</html>

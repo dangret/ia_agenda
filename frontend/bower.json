@@ -1,0 +1,99 @@
+{
+  "name": "remuneracion",
+  "version": "0.0.0",
+  "authors": [
+    "Daniel Negrete <daniel.negrete@sinneg.com>"
+  ],
+  "main": "public/index.php",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "accounting": "~0.3.2",
+    "angular": "~1.4.0",
+    "angular-animate": "~1.4.3",
+    "angular-bootstrap": "~0.13.2",
+    "angular-datatables": "~0.4.3",
+    "angular-datepicker": "~1.0.12",
+    "angular-dropzone": "~0.1.2",
+    "angular-input-masks": "~2.1.0",
+    "angular-moment": "~0.10.2",
+    "angular-morris-chart": "~1.1.0",
+    "angular-resource": "~1.4.0",
+    "angular-route": "~1.4.0",
+    "angular-sanitize": "~1.4.3",
+    "angular-touch": "~1.4.0",
+    "angular-ui-select": "~0.12.1",
+    "animate.css": "~3.3.0",
+    "bootstrap": "~3.3.5",
+    "components-font-awesome": "~4.4.0",
+    "dropzone": "~4.0.1",
+    "font-awesome": "*",
+    "jquery": "~2.1.4",
+    "jquery.easy-pie-chart": "~2.1.6",
+    "lodash": "~3.10.1",
+    "malarkey": "yuanqing/malarkey#~1.3.0",
+    "moment": "~2.10.3",
+    "ng-flow": "~2.6.1",
+    "ng-messages": "*",
+    "ng-remote-validate": "~0.6.1",
+    "toastr": "~2.1.1"
+  },
+  "overrides": {
+    "angular-datatables": {
+      "dependencies": {
+        "angular": ">=1.3.0",
+        "datatables": ">=1.10.0"
+      }
+    },
+    "angular": {
+      "dependencies": {
+        "jquery": "~2.1.4"
+      }
+    },
+    "angular-dropzone": {
+      "dependencies": {
+        "angular": "~1.4.3"
+      }
+    },
+    "angular-datepicker": {
+      "dependencies": {
+        "angular": "~1.4.3"
+      }
+    },
+    "ng-remote-validate": {
+      "dependencies": {
+        "angular": "~1.4.3"
+      }
+    },
+    "jquery.easy-pie-chart": {
+      "main": [
+        "dist/jquery.easypiechart.js",
+        "dist/angular.easypiechart.js"
+      ],
+      "dependencies": {
+        "jquery": ">=1.9.0",
+        "angular": "~1.4.3"
+      }
+    },
+    "angular-ui-fuelux-wizard": {
+      "main": "wizard.js",
+      "dependencies": {
+        "angular": "~1.4.3"
+      }
+    }
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.0"
+  },
+  "resolutions": {
+    "jquery": "~2.1.4",
+    "angular": "~1.4.0",
+    "dropzone": "~4.0.1"
+  }
+}
