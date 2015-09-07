@@ -21,15 +21,15 @@ return array(
 	'connections' => array(
 
 		'mysql' => array(
-			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'agenda_dev',
-			'username'  => 'root',
-			'password'  => 'S1nn3g123',
-			'charset'   => 'utf8',
-			'collation' => 'utf8_unicode_ci',
-			'prefix'    => '',
-		),
+	        'driver'    => 'mysql',
+	        'host'      => 'localhost',
+	        'database'  => 'db_name',
+	        'username'  => 'root',
+	        'password'  => 'secret',
+	        'charset'   => 'utf8',
+	        'collation' => 'utf8_unicode_ci',
+	        'prefix'    => '',
+	    ),
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',
