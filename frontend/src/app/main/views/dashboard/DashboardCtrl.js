@@ -28,9 +28,6 @@ angular.module('agenda')
 				 		});
 				 		$scope.chart.stats.push(plot);
 				 	});
-				 	$scope.stats = _.map($scope.chart.stats, function(stat){
-				 		return {stat.method: stat.times};
-				 	});
 				 	console.log($scope.stats);
 				})
 			}
