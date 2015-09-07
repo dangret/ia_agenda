@@ -24,7 +24,7 @@
 </div>
 <script type="text/ng-template" id="EmployeeData">
 	<div class="modal-content">
-		<form name="formContact" ng-submit="formContact.$valid && save()" novalidate>
+		<form name="formContact" ng-submit="formContact.$valid && uploader.flow.files.length && save()" novalidate>
 			<div class="modal-header">
 				<button type="button" class="bootbox-close-button close" ng-click="close()" aria-hidden="true">×</button>
 				<h3>
@@ -115,6 +115,9 @@
 										</div>
 										<div class="thumbnail" ng-show="uploader.flow.files.length">
 											<img flow-img="uploader.flow.files[0]" />
+										</div>
+										<div class="error text-center" ng-if="!$flow.files.length && formContact.$submitted">
+											<small class="error">Falta imagen</small>
 										</div>
 										<div class="text-center" ng-if="type == 'edit'">
 											<span class="btn btn-primary" ng-show="!uploader.flow.files.length" flow-btn="">Select image<input type="file" style="visibility: hidden; position: absolute;"/></span>

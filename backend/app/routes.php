@@ -15,11 +15,16 @@ Route::get('/', function (){
 	return View::make('template/master');
 });
 
-Route::group(['prefix'=>'api/v1'], 
+Route::group(['prefix'=>'api/v1/', 'before' => 'registerEntering'], 
 	function(){
+
+		Route::get('visitorip', function(){
+			return Util::visitorip();
+		});
 		Route::post('contacts/field-exists/{field?}/{id?}', 'ContactController@fieldExists');
 		Route::resource('contacts','ContactController');
 		Route::controller('img','ImgController');
+		Route::controller('stats','StatController');
 	});
 
 

@@ -67,7 +67,9 @@ angular.module('agenda')
 
 angular.module('agenda').filter('tel', function () {
     return function (tel) {
-        if (!tel) { return ''; }
+        if (!tel) {
+            return '';
+        }
         var value = tel.toString().trim().replace(/^\+/, '');
 
         if (value.match(/[^0-9]/)) {

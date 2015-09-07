@@ -35,6 +35,7 @@
     "dropzone": "~4.0.1",
     "font-awesome": "*",
     "jquery": "~2.1.4",
+    "jquery-countTo": "~1.1.0",
     "jquery.easy-pie-chart": "~2.1.6",
     "lodash": "~3.10.1",
     "malarkey": "yuanqing/malarkey#~1.3.0",

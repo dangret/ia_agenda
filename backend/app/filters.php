@@ -48,6 +48,17 @@ Route::filter('auth', function()
 });
 
 
+Route::filter('registerEntering', function($route)
+{
+	$method = head($route->getMethods());
+	$resource = head(explode('/',str_replace($route->getPrefix(),'',$route->uri())));
+	Stat::create([	
+		'method' => $method,
+		'resource' => $resource,
+		]);
+});
+
+
 Route::filter('auth.basic', function()
 {
 	return Auth::basic();
