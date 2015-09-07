@@ -4,6 +4,7 @@ El proyecto está divido en dos partes, backend y frontend.
 Los archivos que se compilan no fueron borrados para no tener que instalar herramientas para hacer la prueba.
 
 1. BACKEND
+	
 	Se encuentra hecho con laravel
 	los archivos principales son los siguientes:
 	- app/routes.php: Indica como se consumen los recursos
@@ -15,6 +16,7 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 	NOTA: a pesar de tener habilitado los CORS, me da unos problemas con la modificación de la imagen, utilice un plugin para chrome omitirlo
 
 2. FRONTEND
+	
 	Está hecho a base de un entorno de trabajo llamado angular-gulp
 	para poderlo ejecutar tendran que tener instalado nodejs y gulp (de manera global "npm install -g gulp")
 	en el archivo 'frontend/src/app/ng.app.js' hasta el final, se encuentran las configuracíones de la ruta de la api, cambiarlas a convenciencia
