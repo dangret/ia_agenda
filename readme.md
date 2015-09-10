@@ -1,4 +1,5 @@
-*INSTRUCCIONES
+#INSTRUCCIONES
+
 El proyecto está divido en dos partes, backend y frontend.
 Los archivos que se compilan no fueron borrados para no tener que instalar herramientas para hacer la prueba.
 
