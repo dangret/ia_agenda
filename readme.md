@@ -21,15 +21,17 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 		* ### 1.1.1. LINUX (DEBIAN DISTs): ###
 			* #### 1.1.3. HOST: ####
 
-				Ejecutar el siguiente comando en la terminal para agregar a los host el enmascaramiento
+				Ejecutar el siguiente comando en la terminal para agregar a los host el enmascaramiento (equivalente a ejecutar el archivo)
 
+				```nash
 					sudo echo "127.0.1.1	agenda" >> /etc/hosts 
+				```
 
 			* #### 1.1.4 NGINX: ####
 
-				Introducir el siguiente código en el archivo de configuración localizado en "/etc/nginx/
-
-    				sites-available/default"
+				Introducir el siguiente código en el archivo de configuración localizado en */etc/nginx/sites-available/default*
+    				    
+				```nginx
     				    server {
     				        listen 80;
     				
@@ -53,6 +55,7 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
     				        fastcgi_read_timeout 900;
     				    }
     				}
+    			```
 
 				Reemplazar '/home/daiel/jobbies/agenda' por la ruta en la que se haya descargado el proyecto. como se puede observar apunta hacia la carpeta public del proyecto backend (PHP - Laravel).
 
@@ -71,20 +74,24 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 				1. Descarga e instalar WAMP [aqui](http://sourceforge.net/projects/wampserver/files/WampServer%202/Wampserver%202.5/wampserver2.5-Apache-2.4.9-Mysql-5.6.17-php5.5.12-32b.exe/download) con valores predeterminados (next, next, next ... next.).
 
 				2. Agregar el host virtual en C:\wamp\bin\apache\Apache2.2.21\conf\httpd.conf y descomentar el incluir hosts virtuales:
-
+	
+					```apache
 						#Virtual hosts
 						#Include conf/extra/httpd-vhosts.conf
+					```
 
 					cambiar por: 
-
+					
+					```apache
 						#Virtual hosts
 						Include conf/extra/httpd-vhosts.conf
+					```
 
 				3. Asegurarnos que el módulo de rewrite esté habilitado (sin comentario):
 
 					LoadModule rewrite_module modules/mod_rewrite.so (necesario para las urls de laravel)
 
-				3. Agregar el host virtual en el siguiente archivo C:\wamp\bin\apache\Apache2.2.21\conf\extra\httpd-vhosts.conf
+				3. Agregar el host virtual en el siguiente archivo *C:\wamp\bin\apache\Apache2.2.21\conf\extra\httpd-vhosts.conf*
 
 					```apache
 				    	<VirtualHost: *80>
