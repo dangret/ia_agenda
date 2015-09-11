@@ -30,7 +30,7 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 	* ## 1.1. INSTALACION ##
 
 		* ### 1.1.1. LINUX (DEBIAN DISTs) ###
-		
+
 			* #### 1.1.3. HOST ####
 
 				Ejecutar el siguiente comando en la terminal para agregar a los host el enmascaramiento (equivalente a ejecutar el archivo)
@@ -216,7 +216,40 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 	* ## 2.2 FUNCIONAMIENTO ## 
 	
 		EL Frontend se encuentra desarrollado en un entorno de trabajo llamado angular-gulp (de Yeoman)
-		
+
+		El entorno de trabajo es extenso, más sin embargo, lo importante del projecto se encuentra en la ruta *src/app* 
+		desde este punto se podrá encontrar la siguiente estructura:
+			
+			├── app
+			│ 	├── components
+			│ 	├── fonts
+			│ 	├── index.less
+			│ 	├── main
+			│ 	│   ├── main.html
+			│ 	│   └── views
+			│ 	│       ├── contactos
+			│ 	│       │   ├── ContactCtrl.js
+			│ 	│       │   ├── ContactDataCtrl.js
+			│ 	│       │   ├── ContactInfo.html
+			│ 	│       │   ├── Contact.js
+			│ 	│       │   ├── contacts.html
+			│ 	│       │   ├── contacts.less
+			│ 	│       │   └── StatService.js
+			│ 	│       └── dashboard
+			│ 	│           ├── DashboardCtrl.js
+			│ 	│           └── dashboard.html
+			│ 	│       
+			│ 	├── ng
+			│ 	│   ├── controller
+			│ 	│   ├── directive
+			│ 	│   ├── filter
+			│ 	│   └── service
+			│ 	├── ng.app.js
+			│ 	├── assets
+			│ 	├── index.html
+			├── assets
+			└── index.html
+
 		En el archivo *frontend/src/app/ng.app.js* **linea 60**, se encuentran las configuracíones de la ruta de la api, 
 		en caso de no estar utilizando los valores aquí utilizados cambiarlos a conveniencia. Por default es *http://agenda/api/v1*
 
@@ -230,7 +263,19 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
     			});
 		```
 
-		ejecutar el servidor con el comando 
+	
+		Ubicandonos en *src* se listarán algunos de los archivos más importantes
+
+		* **ap/ng/** Todo aquello que sea lógica de la aplicación y sea "compartido" por varios controladores, se anexa en esta carpeta 
+			separandose por su tipo (logica de negocio angular)
+		* **app/ng.app.js** el archivo principal de angular, establece las configuraciones (como las rutas) y variables 
+			de la aplicación
+		* **app/views** carpeta que guarda las vistas y controladores del sitio web, organizadas por su respectiva carpeta-por-vista 
+			por ejemplo, la vista dashboard, tendra su carpeta dashboard, y dentro su archivo html y su respectivo archivo js (un less en caso de ser necesario)
+		* **assets/** aquí se guardan los recursos necesarios para la pagina, como css, scripts e imagenes
+		* **index.html** sirve como contenedor para el entorno de desarrollo, este es el html principal
+		
+		Para ejecutar el servidor, ejecutar el servidor con el comando :
 
 		```bash
 			gulp serve
