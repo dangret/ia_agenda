@@ -86,12 +86,12 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 
 				3. Agregar el host virtual en el siguiente archivo C:\wamp\bin\apache\Apache2.2.21\conf\extra\httpd-vhosts.conf
 
-						```apache
+					```apache
 				    	<VirtualHost: *80>
 				    		DocumentRoot C:/wamp/htdocs/ia_agenda/backend/public
 				    		ServerName agenda
 				    	</VirtualHost>    
-						```
+					```
 
 					valores DocumentRoot y ServerName cambiarlos a necesidades del entorno, 
 					aunque los valores utilizados están destinados a ser los necesarios si se sigue la guía al pie de la letra.
@@ -113,7 +113,7 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 				Una vez que la base de datos esté creada, se debe de configurar el archivo *backend/app/config/local/database.php*
 				identificar el siguiente código y establecer los parametros según el entorno de pruebas  
 
-					```PHP		    		
+				```PHP		    		
 		    		'mysql' => array(
 		    		    'driver'    => 'mysql',
 		    		    'host'      => 'localhost',
@@ -124,13 +124,13 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 		    		    'collation' => 'utf8_unicode_ci',
 		    		    'prefix'    => '',
 		    		),
-					```
+				```
 				
 				Una vez configurado el el proyecto a la base de datos, crear la tablas con el siguiente ubicando en */backend/* 
 
-					```bash		    		
+				```bash		    		
 					php artisan migrate		
-					```
+				```
 				Comprobar en la BD que las tablas estén generadas. 
 
 				También ajunto una copia de la creación de la BD. */create_db.sql*
@@ -188,7 +188,7 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 		En el archivo *frontend/src/app/ng.app.js* **linea 60**, se encuentran las configuracíones de la ruta de la api, 
 		en caso de no estar utilizando los valores aquí utilizados cambiarlos a conveniencia. Por default es *http://agenda/api/v1*
 
-			```javascript
+		```javascript
 			angular.module('agenda')
     			.constant('config', {
     		    	appName: 'agenda',
@@ -196,13 +196,13 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
     		    	apiUrl: 'http://agenda/api/v1/',
     		    	baseUrl: 'http://agenda/'
     			});
-			```
+		```
 
 		ejecutar el servidor con el comando 
 
-			```bash
+		```bash
 			gulp serve
-			```
+		```
 		
 		lo cual creará un servidor de NodeJS y lanzará el navegador con la ruta para un ambiente de desarrollo
 
