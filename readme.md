@@ -107,7 +107,7 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 
 					```apache
 				    	<VirtualHost: *80>
-				    		DocumentRoot C:/wamp/htdocs/ia_agenda/backend/public
+				    		DocumentRoot "C:/wamp/htdocs/ia_agenda/backend/public"
 				    		ServerName agenda
 				    	</VirtualHost>    
 					```
