@@ -85,6 +85,7 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 					LoadModule rewrite_module modules/mod_rewrite.so (necesario para las urls de laravel)
 
 				3. Agregar el host virtual en el siguiente archivo C:\wamp\bin\apache\Apache2.2.21\conf\extra\httpd-vhosts.conf
+
 						```apache
 				    	<VirtualHost: *80>
 				    		DocumentRoot C:/wamp/htdocs/ia_agenda/backend/public
@@ -111,6 +112,7 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 
 				Una vez que la base de datos esté creada, se debe de configurar el archivo *backend/app/config/local/database.php*
 				identificar el siguiente código y establecer los parametros según el entorno de pruebas  
+
 					```PHP		    		
 		    		'mysql' => array(
 		    		    'driver'    => 'mysql',
@@ -123,7 +125,9 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 		    		    'prefix'    => '',
 		    		),
 					```
+				
 				Una vez configurado el el proyecto a la base de datos, crear la tablas con el siguiente ubicando en */backend/* 
+
 					```bash		    		
 					php artisan migrate		
 					```
@@ -183,6 +187,7 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 		
 		En el archivo *frontend/src/app/ng.app.js* **linea 60**, se encuentran las configuracíones de la ruta de la api, 
 		en caso de no estar utilizando los valores aquí utilizados cambiarlos a conveniencia. Por default es *http://agenda/api/v1*
+
 			```javascript
 			angular.module('agenda')
     			.constant('config', {
@@ -194,9 +199,11 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 			```
 
 		ejecutar el servidor con el comando 
+
 			```bash
 			gulp serve
 			```
+		
 		lo cual creará un servidor de NodeJS y lanzará el navegador con la ruta para un ambiente de desarrollo
 
 		**Listo!**
