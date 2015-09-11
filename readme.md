@@ -73,7 +73,7 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 
 		* ### 1.1.2 WINDOWS ####
 
-			NOTA: Si no quieres complicarte la existencia, ubicar el proyecto en C:/wamp/htdocs/ 
+			NOTA: Si no quieres complicarte la existencia, ubicar el proyecto en C:/wamp/www/ 
 
 			* #### 1.1.2.1 HOST: ####
 
@@ -107,7 +107,7 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 
 					```apache
 				    	<VirtualHost: *80>
-				    		DocumentRoot "C:/wamp/htdocs/ia_agenda/backend/public"
+				    		DocumentRoot "C:/wamp/www/ia_agenda/backend/public"
 				    		ServerName agenda
 				    	</VirtualHost>    
 					```
