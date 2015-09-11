@@ -26,8 +26,11 @@ El proyecto está divido en dos partes, backend y frontend.
 Los archivos que se compilan no fueron borrados para no tener que instalar herramientas para hacer la prueba.
 
 * # 1. BACKEND #
+
 	* ## 1.1. INSTALACION ##
+
 		* ### 1.1.1. LINUX (DEBIAN DISTs) ###
+		
 			* #### 1.1.3. HOST ####
 
 				Ejecutar el siguiente comando en la terminal para agregar a los host el enmascaramiento (equivalente a ejecutar el archivo)
@@ -41,8 +44,8 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 				Introducir el siguiente código en el archivo de configuración localizado en */etc/nginx/sites-available/default*
     				    
 				```nginx
-    				    server {
-    				        listen 80;
+    				server {
+    				    listen 80;
     				
     				    root /home/daniel/jobbies/ia/agenda/backend/public;
     				    index index.php index.html index.htm;
@@ -116,7 +119,7 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 				tan solo falta ejecutar (o reiniciar) wamp desde la barra de notificaciones
 				para que se puea utilizar. 
 				
-				**Listo!**. la API ya puede ser utilizada desde http://agenda/api/v1/. [Doc](https://app.apiary.io/iaagenda) 
+				**Listo!**. la API ya puede ser utilizada desde http://agenda/api/v1/. [Doc](http://docs.iaagenda.apiary.io/) 
 
 			* #### BASE DE DATOS: ####
 
@@ -163,25 +166,37 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 		
 				El controlador del recurso contacto, en *app/routes.php* se indica que cuando la ruta sea **/api/v1/contacts** este buscará 
 				detro de este archivo y respondera a las funciones según las peticiones.
-				 en la [API](https://app.apiary.io/iaagenda) se encuentra la referencia de como utilizarlo
+				 en la [API](http://docs.iaagenda.apiary.io/) se encuentra la referencia de como utilizarlo
 		
 		    
 		segun las configuraciones necesarias en su entorno de trabajo despues, deberá de ejecutar el siguiente comando (estando en la carpeta 'backend')
 		    
 		    php artisan migrate
 		
-		siendo posible generarla, la anexó de igual forma 'create_db.sql'
-	
-		NOTA: a pesar de tener habilitado los CORS, me da unos problemas con la modificación de la imagen, utilice un plugin para chrome yaque es 	debido a una configuración de seguridad del navegador.
+		siendo posible generarla, la anexó de igual forma *create_db.sql* 
+
+		**NOTA:** A pesar de tener habilitado los CORS, me da unos problemas con la modificación de la imagen, utilice un plugin para chrome ya que es 	debido a una configuración de seguridad del navegador.
 
 * # 2. FRONTEND #
 
 	* ## 2.1 INSTALACION ##
+
 		* ## 2.1.1 LINUX (DEBIAN DISTs) ##
+
 			* ### 2.1.1.1 NodeJS ###
+				
+				```bash
+					sudo apt-get update; sudo apt-get install nodejs
+				```
+
 				* #### 3 2.1.1.1 GULP ####
+				
+				```bash
+					sudo npm install -g gulp
+				```
 
 		* ## 2.1.2 WINDOWS ##
+
 			* ### 2.1.1.1 NodeJS ###
 
 				Es un interprete y un framework que nos permite utilizar javascript del lado del servidor necesario para poder ejecutar
