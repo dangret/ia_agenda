@@ -1,0 +1,186 @@
+FORMAT: 1A
+HOST: http://agenda/
+
+# Agenda
+Api que permite interactuar con una agenda web
+
+## Group Resources
+## Contact [/contacts]
+
++ Attributes
+   + id (number, required) - ID del contacto
+   + name (string, required) - nombre del contacto
+   + mid_name (string, required) - Apellido paterno
+   + last_name (string, optional) - Apellido materno
+   + phone: XXXXXXXXXX (string, required) - Telefono
+   + email: un@email.com  (string, required) - correo electrónico
+   + photo: uploads/contacts/{id}/archivo.ext (string, required) - Ruta relativa desde el servidor hasta el archivo con todo y extension. Se deberá incluir por aparte la dirección del API para poder visuarlizarla
+   + created_at: `yyyy-MM-dd h:m:s` (string) - Fecha de creacion
+   + updated_at: `yyyy-MM-dd h:m:s` (string) - Fecha de actualziacion
+   + delete_at: `yyyy-MM-dd h:m:s` (string) - Fecha de eliminacion
+   
+### List All Contacts [GET /contacts{?id,name,mid_name,last_name,phone,email,photo,created_at,updated_at}]
+Si no se envía ningun parametro, obtendrá todos los contactos, de lo contrario regresará los contactos que hagan match con los parametros utilizados 
+
++ Parameters
+   + id (number, optional) - ID del contacto
+   + name (string, optional) - nombre del contacto
+   + mid_name (string, optional) - Apellido paterno
+   + last_name  (string, optional) - Apellido materno
+   + phone: XXXXXXXXXX (string, optional) - Telefono
+   + email: un@email.com  (string, optional) - correo electronico
+   + photo: uploads/contacts/{id}/archivo.ext (string, optional) - Ruta relativa desde el servidor hasta el archivo con todo y extension. Se deberá incluir por aparte la dirección del API para poder visuarlizarla
+   + created_at: `yyyy-MM-dd hh:mm:ss` (date, optional) - Fecha de creacion
+   + updated_at: `yyyy-MM-dd hh:mm:ss` (date, optional) - Fecha de actualziación
+   
++ Response 200 (application/json)
+
+        {
+            "data": [
+              {
+                "id": 3,
+                "name": "name",
+                "mid_name": "mid_name",
+                "last_name": "last_name",
+                "phone": "1231231232",
+                "email": "123123@123.com",
+                "photo": "relative_url_to_img",
+                "active": boolean,
+                "created_at": "2015-09-07 05:33:14",
+                "updated_at": "2015-09-07 05:35:11",
+                "deleted_at": null
+              }
+            ]
+        }
+        
+### Create a New Contact [POST]
+Para crear un contacto, se deberá de enviar un json parecido al siguiente
+
++ Request (application/json;charset=UTF-8)
+
+        {
+           "photo": "uploads/temp/1441938743684.jpg",
+           "name": "123",
+           "mid_name": "123",
+           "last_name": "123",
+           "phone": "12312312323",
+           "email": "123@123.cin"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "name": "Daniel",
+                "mid_name": "Negrete",
+                "last_name": "Infante",
+                "phone": "3112123310",
+                "email": "lala@lala.com",
+                "photo": "uploads/contacts/6/1441593537864.jpg",
+                "updated_at": "2015-09-11 02:40:38",
+                "created_at": "2015-09-11 02:40:38",
+                "id": 6
+            }
+
+### Update a Contact [PUT /contacts/{id}]
+Para crear un contacto, se deberá de enviar un json parecido al siguiente pudiendo tener
+1 o más atributos del json pueden ser modificados la mismo tiempo
+
++ Parameters
+   + id (number) - el id 
+   
++ Request (application/json;charset=UTF-8)
+
+            {
+                "name": "123",
+                "mid_name": "123",
+                "last_name": "123",
+                "phone": "12312312323",
+                "email": "123@123.cin",
+                "photo": "uploads/temp/1441939494062.jpg",
+                "login": "",
+                "pass": "",
+                "active": 1,
+                "remember_token": null,
+                "created_at": "2015-09-11 02:32:39",
+                "updated_at": "2015-09-11 02:32:39",
+                "deleted_at": null
+            }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": 5,
+                "name": "123",
+                "mid_name": "123",
+                "last_name": "123",
+                "phone": "12312312323",
+                "email": "123@123.cin",
+                "photo": "uploads/temp/1441939494062.jpg",
+                "login": "",
+                "pass": "",
+                "active": 1,
+                "remember_token": null,
+                "created_at": "2015-09-11 02:32:39",
+                "updated_at": "2015-09-11 02:32:39",
+                "deleted_at": null
+            }
+            
+### Delete a Contact [DELETE /contacts/{id}]
+Para crear un contacto, se deberá de enviar un json parecido al siguiente pudiendo tener
+1 o más atributos del json pueden ser modificados la mismo tiempo
+
++ Parameters
+   + id (number) - Contact ID 
+   
++ Response 204
+
+## Group Methods
+## Stats [/stats]
+
+### Obtener las estadísticas de un recurso [GET  /stats/by-date{?resource,period}]
+Regresa una serie de estadisticas en un determinado periodo de tiempo
+el retorno seria una coleccion de objetos que estará compuesto 
+por las veces en las que se repitio en el periodo de tiempo
+el metodo el cual se está tomando estadística
+y la fracción de periodo de tiempo que representa al que fue seleccionado, es decir,
+
+> if period = yearly, x = months
+> 
+> if period = month, x = days
+> 
+> if period = dialy, x hours
+
++ Parameters
+   + resource: contacts (string) - recurso al cual se le desean obtener estadisticas
+   + period (enum[string]) periodo
+       + Members
+           + dialy - This is character A
+           + monthly
+           + yearly - This is character C
+            
++ Response 200
+
+            {
+              "data": [
+                {
+                  "times": 4,
+                  "method": "GET",
+                  "x": 2
+                },
+                {
+                  "times": 5,
+                  "method": "POST",
+                  "x": 2
+                },
+                {
+                  "times": 1,
+                  "method": "PUT",
+                  "x": 2
+                }
+              ]
+            }
+        
