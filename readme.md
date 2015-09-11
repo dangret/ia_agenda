@@ -1,15 +1,24 @@
 OVERVIEW
 ========
-* [1. BACKEND](#1._backend)
-	* 1.1. INSTALACION:
-		* 1.1.1. LINUX (DEBIAN DISTs):
-			* 1.1.3. HOST:
-			* 1.1.4 NGINX:
-		* 1.1.2 WINDOWS:
-			* 1.1.2.1 HOST:
-			* 1.1.2.2 WAMP:
-			* MYSQL:
-	* [1.2 FUNCIONAMIENTO](#FUNCIONAMIENTO)
+* [1. BACKEND](#1-backend)
+	* [1.1. INSTALACION](#11-instalacion)
+		* [1.1.1. LINUX (DEBIAN DISTs)](#111-linux-debian-dists)
+			* [1.1.3. HOST](#113-host)
+			* [1.1.4 NGINX](#114-nginx)
+		* [1.1.2 WINDOWS](#112-windows)
+			* [1.1.2.1 HOST](#1121-host)
+			* [1.1.2.2 WAMP](#1122-wamp)
+			* [BASE DE DATOS](#base-de-datos)
+	* [1.2 DESCRPCIÓN CÓDIGO](#12-descrpción-código)
+* [2. FRONTEND](#2-frontend)
+	* [2.1 INSTALACION](#21-instalacion)
+		* [2.1.1 LINUX (DEBIAN DISTs)](#211-linux-debian-dists)
+			* [2.1.1.1 NodeJS](#2111-nodejs)
+				* [3 2.1.1.1 GULP](#3-2111-gulp)
+		* [2.1.2 WINDOWS](#212-windows)
+			* [2.1.1.1 NodeJS](#2111-nodejs)
+				* [3 2.1.1.1 GULP](#3-2111-gulp)
+	* [2.2 FUNCIONAMIENTO ](#22-funcionamiento)
 
 INSTRUCCIONES
 =============
@@ -17,9 +26,9 @@ El proyecto está divido en dos partes, backend y frontend.
 Los archivos que se compilan no fueron borrados para no tener que instalar herramientas para hacer la prueba.
 
 * # 1. BACKEND #
-	* ## 1.1. INSTALACION: ##
-		* ### 1.1.1. LINUX (DEBIAN DISTs): ###
-			* #### 1.1.3. HOST: ####
+	* ## 1.1. INSTALACION ##
+		* ### 1.1.1. LINUX (DEBIAN DISTs) ###
+			* #### 1.1.3. HOST ####
 
 				Ejecutar el siguiente comando en la terminal para agregar a los host el enmascaramiento (equivalente a ejecutar el archivo)
 
@@ -27,7 +36,7 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 					sudo echo "127.0.1.1	agenda" >> /etc/hosts 
 				```
 
-			* #### 1.1.4 NGINX: ####
+			* #### 1.1.4 NGINX ####
 
 				Introducir el siguiente código en el archivo de configuración localizado en */etc/nginx/sites-available/default*
     				    
@@ -57,9 +66,9 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
     				}
     			```
 
-				Reemplazar '/home/daiel/jobbies/agenda' por la ruta en la que se haya descargado el proyecto. como se puede observar apunta hacia la carpeta public del proyecto backend (PHP - Laravel).
+				Reemplazar */home/daiel/jobbies/agenda* por la ruta en la que se haya descargado el proyecto. como se puede observar apunta hacia la carpeta public del proyecto backend (PHP - Laravel).
 
-		* ### 1.1.2 WINDOWS: ####
+		* ### 1.1.2 WINDOWS ####
 
 			NOTA: Si no quieres complicarte la existencia, ubicar el proyecto en C:/wamp/htdocs/ 
 
@@ -69,7 +78,7 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 
 					127.0.1.1 	agenda
 
-			* #### 1.1.2.2 WAMP: ####
+			* #### 1.1.2.2 WAMP ####
 
 				1. Descarga e instalar WAMP [aqui](http://sourceforge.net/projects/wampserver/files/WampServer%202/Wampserver%202.5/wampserver2.5-Apache-2.4.9-Mysql-5.6.17-php5.5.12-32b.exe/download) con valores predeterminados (next, next, next ... next.).
 
@@ -171,7 +180,7 @@ Los archivos que se compilan no fueron borrados para no tener que instalar herra
 		* ## 2.1.1 LINUX (DEBIAN DISTs) ##
 			* ### 2.1.1.1 NodeJS ###
 				* #### 3 2.1.1.1 GULP ####
-				
+
 		* ## 2.1.2 WINDOWS ##
 			* ### 2.1.1.1 NodeJS ###
 
